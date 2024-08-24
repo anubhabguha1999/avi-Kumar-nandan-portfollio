@@ -23,7 +23,7 @@ function App() {
   }, []);
 
   // Calculate the middle and bottom of the page
-  const middleOfPage = (document.documentElement.scrollHeight - window.innerHeight) / 2;
+  const middleOfPage = (document.documentElement.scrollHeight - window.innerHeight) / 2.5;
   const bottomOfPage = document.documentElement.scrollHeight - window.innerHeight;
 
   // Calculate color based on scroll position
