@@ -11,7 +11,7 @@ export const Navbar = () => {
       <a className={styles.title} href="/">
         Avi Kumar Nandan
       </a>
-      <div className={styles.menu}>
+      {/* `<div className={styles.menu}>
         <img
           className={styles.menuBtn}
           src={
@@ -29,17 +29,17 @@ export const Navbar = () => {
           <li>
             <a href="#about">About</a>
           </li>
-          {/* <li>
+          <li>
             <a href="#experience">Experience</a>
           </li>
           <li>
             <a href="#projects">Projects</a>
-          </li> */}
+          </li>
           <li>
             <a href="#about">Contact</a>
           </li>
         </ul>
-      </div>
+      </div>` */}
     </nav>
   );
 };

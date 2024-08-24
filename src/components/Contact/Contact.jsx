@@ -25,7 +25,7 @@ export const Contact = () => {
         </li>
         <li className={styles.link}>
           <img  style={{height:'2.5rem', width: '2.5rem'}} src={getImageUrl("contact/insta.png")} alt="Github icon" />
-          <a href="https://www.instagram.com/abhi_kumar_nandan007/">instagram.com/abhi_kumar_nandan007/</a>
+          <a href="https://www.instagram.com/abhi_kumar_nandan007/">instagram/aviKumarNandan</a>
         </li>
       </ul>
     </footer>
