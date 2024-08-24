@@ -17,10 +17,13 @@
   align-items: flex-start;
   color: var(--color-text);
   z-index: 1;
+  opacity: 0; /* Start as invisible */
+  transform: translateY(60px); /* Stronger downward shift */
+  animation: fadeInUp 1.2s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards; /* Stronger fade-in and up effect */
 }
 
 .title {
-  font-size: 73px;
+  font-size: 72px;
   font-weight: 900;
   margin-bottom: 33px;
   font-family: var(--font-roboto);
@@ -47,56 +50,130 @@
   font-size: 30px;
   font-weight: 600;
   padding: 17px 26px;
-  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.25);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.contactBtn:hover {
+  background-color: var(--color-primary-hover); /* Add a hover color in vars.css */
+  transform: scale(1.05);
 }
 
 .heroImg {
   width: 50%;
   z-index: 1;
-  border-radius :100%;
-  animation-name: floating;
-  animation-duration: 3s;
-  animation-iteration-count: infinite;
-  animation-timing-function: ease-in-out;
+  border-radius: 100%;
+  animation: bounce 4s ease-in-out; /* Apply the bounce animation */
 }
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0); /* Starting position */
+  }
+  30% {
+    transform: translateY(100px); /* Fall down */
+  }
+  50% {
+    transform: translateY(-30px); /* Small bounce up */
+  }
+  70% {
+    transform: translateY(50px); /* Fall down again */
+  }
+  80% {
+    transform: translateY(-15px); /* Smaller bounce up */
+  }
+  90% {
+    transform: translateY(30px); /* Fall down again */
+  }
+  100% {
+    transform: translateY(0); /* Return to starting position */
+  }
+}
+
 
 @keyframes floating {
   0% {
     transform: translate(0, 0px);
   }
+  25% {
+    transform: translate(0, 30px); /* Increased vertical movement */
+  }
   50% {
-    transform: translate(0, 10px);
+    transform: translate(0, -20px); /* Increased vertical movement */
+  }
+  75% {
+    transform: translate(0, 20px); /* Increased vertical movement */
   }
   100% {
-    transform: translate(0, -0px);
+    transform: translate(0, 0px);
   }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-60px); /* Increased horizontal movement */
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(60px); /* Stronger initial vertical shift */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes textGlow {
+  0% {
+    text-shadow: 0 0 1px rgba(0, 255, 0, 0.6), 0 0 2px rgba(0, 255, 0, 0.4), 0 0 30px rgba(0, 255, 0, 0.3);
+  }
+  50% {
+    text-shadow: 0 0 2px rgba(0, 255, 0, 0.8), 0 0 5px rgba(0, 255, 0, 0.6), 0 0 45px rgba(0, 255, 0, 0.4);
+  }
+  100% {
+    text-shadow: 0 0 1px rgba(0, 255, 0, 0.6), 0 0 2px rgba(0, 255, 0, 0.4), 0 0 30px rgba(0, 255, 0, 0.3);
+  }
+}
+
+.animateText {
+  display: inline-block;
+  color: #00ff00; /* Neon green text color */
+  animation: textGlow 1.5s ease-in-out infinite;
 }
 
 .topBlur {
   position: absolute;
-  width: 50vw;
-  height: 50vw;
-  min-width: 350px;
-  min-width: 350px;
-  top: -128px;
-  left: -10vw;
+  width: 60vw; /* Increased size for more blur effect */
+  height: 60vw; /* Increased size for more blur effect */
+  min-width: 400px;
+  min-height: 400px;
+  top: -150px;
+  left: -15vw;
   border-radius: 764px;
-  background: rgba(25, 55, 109, 0.7);
-  filter: blur(100px);
+  background: rgba(25, 55, 109, 0.8); /* Slightly darker background */
+  filter: blur(120px); /* Stronger blur */
   z-index: 0;
 }
 
 .bottomBlur {
   position: absolute;
-  width: 70vw;
-  height: 50vw;
-  min-width: 350px;
-  min-width: 250px;
-  top: 246px;
-  right: -25vw;
+  width: 80vw; /* Increased size for more blur effect */
+  height: 60vw; /* Increased size for more blur effect */
+  min-width: 400px;
+  min-height: 250px;
+  top: 250px;
+  right: -30vw;
   border-radius: 764px;
-  background: rgba(25, 55, 109, 0.7);
-  filter: blur(100px);
+  background: rgba(25, 55, 109, 0.8); /* Slightly darker background */
+  filter: blur(120px); /* Stronger blur */
   z-index: 0;
 }
 
