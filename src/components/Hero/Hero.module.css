@@ -23,7 +23,7 @@
 }
 
 .title {
-  font-size: 72px;
+  font-size: 72px; /* Default font size for larger screens */
   font-weight: 900;
   margin-bottom: 33px;
   font-family: var(--font-roboto);
@@ -35,6 +35,7 @@
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
 }
+
 
 .description {
   font-size: 30px;
@@ -60,11 +61,22 @@
 }
 
 .heroImg {
-  width: 50%;
+  width: 50%; /* Default width for larger screens */
   z-index: 1;
   border-radius: 100%;
   animation: bounce 2s ease-in-out; /* Apply the bounce animation */
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.8), /* Inner white glow */
+              0 0 10px rgba(255, 255, 255, 0.6), /* Outer white glow */
+              0 0 20px rgba(255, 255, 255, 0.4), /* Further outer white glow */
+              0 0 30px rgba(255, 255, 255, 0.2); /* Farthest outer white glow */
 }
+
+@media screen and (max-width: 830px) {
+  .heroImg {
+    width: 90%; /* Adjust width for mobile view */
+  }
+}
+
 
 @keyframes bounce {
   0% {
