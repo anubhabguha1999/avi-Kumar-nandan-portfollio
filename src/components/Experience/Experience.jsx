@@ -11,11 +11,11 @@ export const Experience = () => {
     const style = document.createElement("style");
     style.innerHTML = `
       @keyframes snakeAnimation {
-        0% { border-image-source: linear-gradient(90deg, red, #000000); border-image-slice: 1; border-image-width: 5px; box-shadow: 0 0 15px 5px rgba(70, 0, 0, 0.6); }
-        25% { border-image-source: linear-gradient(180deg, red, #000000); border-image-slice: 1; border-image-width: 5px; box-shadow: 0 0 15px 5px rgba(0, 0, 70, 0.6); }
-        50% { border-image-source: linear-gradient(270deg, red, #000000); border-image-slice: 1; border-image-width: 5px; box-shadow: 0 0 15px 5px rgba(0, 0, 70, 0.1); }
-        75% { border-image-source: linear-gradient(360deg, red, #000000); border-image-slice: 1; border-image-width: 5px; box-shadow: 0 0 15px 5px rgba(70, 0, 0, 0.6); }
-        100% { border-image-source: linear-gradient(90deg, red, #000000); border-image-slice: 1; border-image-width: 5px; box-shadow: 0 0 15px 5px rgba(0, 0, 70, 0.6); }
+        0% { border-image-source: linear-gradient(90deg, red, transparent); border-image-slice: 1; border-image-width: 5px; box-shadow: 0 0 15px 5px rgba(70, 0, 0, 0.6); }
+        25% { border-image-source: linear-gradient(180deg, red, transparent); border-image-slice: 1; border-image-width: 5px; box-shadow: 0 0 15px 5px rgba(0, 0, 70, 0.6); }
+        50% { border-image-source: linear-gradient(270deg, red, transparent); border-image-slice: 1; border-image-width: 5px; box-shadow: 0 0 15px 5px rgba(0, 0, 70, 0.1); }
+        75% { border-image-source: linear-gradient(360deg, red, transparent); border-image-slice: 1; border-image-width: 5px; box-shadow: 0 0 15px 5px rgba(70, 0, 0, 0.6); }
+        100% { border-image-source: linear-gradient(90deg, red, transparent); border-image-slice: 1; border-image-width: 5px; box-shadow: 0 0 15px 5px rgba(0, 0, 70, 0.6); }
       }
     `;
     document.head.appendChild(style);
