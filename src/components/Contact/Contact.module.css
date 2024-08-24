@@ -59,6 +59,7 @@
   }
 
   .links {
-    align-items: center;
+    /* align-items: center; */
+    align-items: flex-start;
   }
 }
