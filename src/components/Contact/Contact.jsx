@@ -17,14 +17,15 @@ export const Contact = () => {
         </li>
         <li className={styles.link}>
           <img
-            src={getImageUrl("contact/linkedinIcon.png")}
+          style={{height:'2.5rem', width: '2.5rem'}}
+            src={getImageUrl("contact/facebook.png")}
             alt="LinkedIn icon"
           />
-          <a href="https://www.linkedin.com/in/anubhab-guha-478967201/">linkedin.com/anubhab-guha</a>
+          <a href="https://www.facebook.com/bloker.avijit">facebook/aviKumarNandan</a>
         </li>
         <li className={styles.link}>
-          <img src={getImageUrl("contact/githubIcon.png")} alt="Github icon" />
-          <a href="https://github.com/anubhabguha1999">github.com/AnubhabGuha</a>
+          <img  style={{height:'2.5rem', width: '2.5rem'}} src={getImageUrl("contact/insta.png")} alt="Github icon" />
+          <a href="https://www.instagram.com/abhi_kumar_nandan007/">instagram.com/abhi_kumar_nandan007/</a>
         </li>
       </ul>
     </footer>

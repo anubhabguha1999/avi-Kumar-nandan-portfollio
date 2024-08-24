@@ -1,5 +1,4 @@
 import React from "react";
-
 import styles from "./Experience.module.css";
 import skills from "../../data/skills.json";
 import history from "../../data/history.json";
@@ -7,6 +6,53 @@ import { getImageUrl } from "../../utils";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 
 export const Experience = () => {
+  // Define keyframes for the snake-like circular animation
+  const snakeAnimation = `
+    @keyframes snakeAnimation {
+      0% {
+        border-image-source: linear-gradient(90deg, red, blue, green);
+        border-image-slice: 1;
+        border-image-width: 5px;
+        box-shadow: 0 0 15px 5px rgba(255, 0, 0, 0.6);
+      }
+      25% {
+        border-image-source: linear-gradient(180deg, red, blue, green);
+        border-image-slice: 1;
+        border-image-width: 5px;
+        box-shadow: 0 0 15px 5px rgba(0, 0, 255, 0.6);
+      }
+      50% {
+        border-image-source: linear-gradient(270deg, red, blue, green);
+        border-image-slice: 1;
+        border-image-width: 5px;
+        box-shadow: 0 0 15px 5px rgba(0, 255, 0, 0.6);
+      }
+      75% {
+        border-image-source: linear-gradient(360deg, red, blue, green);
+        border-image-slice: 1;
+        border-image-width: 5px;
+        box-shadow: 0 0 15px 5px rgba(255, 0, 0, 0.6);
+      }
+      100% {
+        border-image-source: linear-gradient(90deg, red, blue, green);
+        border-image-slice: 1;
+        border-image-width: 5px;
+        box-shadow: 0 0 15px 5px rgba(0, 0, 255, 0.6);
+      }
+    }
+  `;
+
+  // Append the keyframes to the document head
+  React.useEffect(() => {
+    const style = document.createElement('style');
+    style.innerHTML = snakeAnimation;
+    document.head.appendChild(style);
+    return () => {
+      document.head.removeChild(style);
+    };
+  }, []);
+
+  // Define inline styles
   const listStyle = {
     listStyleType: "none",
     padding: 0,
@@ -15,26 +61,30 @@ export const Experience = () => {
     flexWrap: "wrap",
     justifyContent: "center",
     maxWidth: "500px",
-    justifyContent: "center",
-    alignItems: "center",
-    gap: 10,
+    gap: "20px",
   };
 
   const skillStyle = {
     backgroundColor: "#19376d",
-    borderRadius: "50%",
-    boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
+    border: "5px solid transparent", // Create space for the border effect
     margin: "0.5rem",
-    padding: "1rem", // Added padding to accommodate the icon and make the div round
-    width: "130px", // Increased width for better spacing
-    height: "100px", // Increased height for better spacing
+    padding: "1rem",
+    width: "130px", // Ensure width and height are equal
+    height: "130px", // Ensure width and height are equal
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
     justifyContent: "center",
     textAlign: "center",
-    flex: "1 1 120px", // Adjusted for responsiveness
-    maxWidth: "150px", // Maximum width for larger screens
+    flex: "1 1 120px",
+    maxWidth: "150px",
+    position: "relative",
+    overflow: "hidden",
+    borderImageSource: "linear-gradient(90deg, red, blue, green)",
+    borderImageSlice: 1,
+    borderImageWidth: "5px",
+    animation: "snakeAnimation 6s infinite linear",
+    boxShadow: "0 0 15px rgba(255, 0, 0, 0.6)", // Default to red glow
   };
 
   const skillIconContainerStyle = {
@@ -42,20 +92,28 @@ export const Experience = () => {
     flexDirection: "column",
     alignItems: "center",
     justifyContent: "center",
-    marginBottom: "0.5rem", // Space between icon and text
+    marginBottom: "0.5rem",
   };
 
   const skillIconStyle = {
-    fontSize: "45px", // Adjusted icon size
-    color: "#576cbc", // Icon color
+    fontSize: "45px",
+    color: "white",
   };
 
   const skillTextStyle = {
     fontSize: "0.9rem",
-    color: "#ffffff", // Text color
+    color: "#ffffff",
     display: "flex",
-    alignItemsL: "center",
+    alignItems: "center",
     justifyContent: "center",
+  };
+
+  // Helper function to get box-shadow color based on the animation phase
+  const getBoxShadowColor = (animationProgress) => {
+    if (animationProgress >= 0 && animationProgress < 0.25) return "rgba(255, 0, 0, 0.6)"; // Red
+    if (animationProgress >= 0.25 && animationProgress < 0.50) return "rgba(0, 0, 255, 0.6)"; // Blue
+    if (animationProgress >= 0.50 && animationProgress < 0.75) return "rgba(0, 255, 0, 0.6)"; // Green
+    return "rgba(255, 0, 0, 0.6)"; // Default to Red
   };
 
   return (
@@ -67,12 +125,19 @@ export const Experience = () => {
             <div
               style={{
                 display: "flex",
-                flexDirection:'column',
+                flexDirection: 'column',
                 justifyContent: "center",
                 alignItems: "center",
+                position: "relative", // Ensure the animation stays within the div
               }}
+              key={id}
             >
-              <li key={id} style={skillStyle}>
+              <li
+                style={{
+                  ...skillStyle,
+                  boxShadow: `0 0 15px ${getBoxShadowColor(id / skills.length)}`,
+                }}
+              >
                 <div style={skillIconContainerStyle}>
                   <i className={skill.iconClass} style={skillIconStyle}></i>
                 </div>
