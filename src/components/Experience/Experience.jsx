@@ -7,53 +7,22 @@ import "@fortawesome/fontawesome-free/css/all.min.css";
 
 export const Experience = () => {
   // Define keyframes for the snake-like circular animation
-  const snakeAnimation = `
-  @keyframes snakeAnimation {
-    0% {
-      border-image-source: linear-gradient(90deg, red, #0b2447);
-      border-image-slice: 1;
-      border-image-width: 5px;
-      box-shadow: 0 0 15px 5px rgba(70, 0, 0, 0.6);
-    }
-    25% {
-      border-image-source: linear-gradient(180deg, red, #0b2447);
-      border-image-slice: 1;
-      border-image-width: 5px;
-      box-shadow: 0 0 15px 5px rgba(0, 0, 70, 0.6);
-    }
-    50% {
-      border-image-source: linear-gradient(270deg, red, #0b2447);
-      border-image-slice: 1;
-      border-image-width: 5px;
-      box-shadow: 0 0 15px 5px rgba(0, 0, 70, 0.1);
-    }
-    75% {
-      border-image-source: linear-gradient(360deg, red, #0b2447);
-      border-image-slice: 1;
-      border-image-width: 5px;
-      box-shadow: 0 0 15px 5px rgba(70, 0, 0, 0.6);
-    }
-    100% {
-      border-image-source: linear-gradient(90deg, red, #0b2447);
-      border-image-slice: 1;
-      border-image-width: 5px;
-      box-shadow: 0 0 15px 5px rgba(0, 0, 70, 0.6);
-    }
-  }
-`;
-
-
-
-  // Append the keyframes to the document head
   React.useEffect(() => {
     const style = document.createElement('style');
-    style.innerHTML = snakeAnimation;
+    style.innerHTML = `
+      @keyframes snakeAnimation {
+        0% { border-image-source: linear-gradient(90deg, red, #04152d); border-image-slice: 1; border-image-width: 5px; box-shadow: 0 0 15px 5px rgba(70, 0, 0, 0.6); }
+        25% { border-image-source: linear-gradient(180deg, red, #04152d); border-image-slice: 1; border-image-width: 5px; box-shadow: 0 0 15px 5px rgba(0, 0, 70, 0.6); }
+        50% { border-image-source: linear-gradient(270deg, red, #04152d); border-image-slice: 1; border-image-width: 5px; box-shadow: 0 0 15px 5px rgba(0, 0, 70, 0.1); }
+        75% { border-image-source: linear-gradient(360deg, red, #04152d); border-image-slice: 1; border-image-width: 5px; box-shadow: 0 0 15px 5px rgba(70, 0, 0, 0.6); }
+        100% { border-image-source: linear-gradient(90deg, red, #04152d); border-image-slice: 1; border-image-width: 5px; box-shadow: 0 0 15px 5px rgba(0, 0, 70, 0.6); }
+      }
+    `;
     document.head.appendChild(style);
     return () => {
       document.head.removeChild(style);
     };
   }, []);
-
   // Define inline styles
   const listStyle = {
     listStyleType: "none",
