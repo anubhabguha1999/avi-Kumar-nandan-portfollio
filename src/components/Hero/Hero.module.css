@@ -63,7 +63,7 @@
   width: 50%;
   z-index: 1;
   border-radius: 100%;
-  animation: bounce 4s ease-in-out; /* Apply the bounce animation */
+  animation: bounce 2s ease-in-out; /* Apply the bounce animation */
 }
 
 @keyframes bounce {
@@ -72,9 +72,6 @@
   }
   30% {
     transform: translateY(100px); /* Fall down */
-  }
-  50% {
-    transform: translateY(-30px); /* Small bounce up */
   }
   70% {
     transform: translateY(50px); /* Fall down again */
