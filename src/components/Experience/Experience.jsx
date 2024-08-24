@@ -8,14 +8,14 @@ import "@fortawesome/fontawesome-free/css/all.min.css";
 export const Experience = () => {
   // Define keyframes for the snake-like circular animation
   React.useEffect(() => {
-    const style = document.createElement('style');
+    const style = document.createElement("style");
     style.innerHTML = `
       @keyframes snakeAnimation {
-        0% { border-image-source: linear-gradient(90deg, red, #04152d); border-image-slice: 1; border-image-width: 5px; box-shadow: 0 0 15px 5px rgba(70, 0, 0, 0.6); }
-        25% { border-image-source: linear-gradient(180deg, red, #04152d); border-image-slice: 1; border-image-width: 5px; box-shadow: 0 0 15px 5px rgba(0, 0, 70, 0.6); }
-        50% { border-image-source: linear-gradient(270deg, red, #04152d); border-image-slice: 1; border-image-width: 5px; box-shadow: 0 0 15px 5px rgba(0, 0, 70, 0.1); }
-        75% { border-image-source: linear-gradient(360deg, red, #04152d); border-image-slice: 1; border-image-width: 5px; box-shadow: 0 0 15px 5px rgba(70, 0, 0, 0.6); }
-        100% { border-image-source: linear-gradient(90deg, red, #04152d); border-image-slice: 1; border-image-width: 5px; box-shadow: 0 0 15px 5px rgba(0, 0, 70, 0.6); }
+        0% { border-image-source: linear-gradient(90deg, red, #000000); border-image-slice: 1; border-image-width: 5px; box-shadow: 0 0 15px 5px rgba(70, 0, 0, 0.6); }
+        25% { border-image-source: linear-gradient(180deg, red, #000000); border-image-slice: 1; border-image-width: 5px; box-shadow: 0 0 15px 5px rgba(0, 0, 70, 0.6); }
+        50% { border-image-source: linear-gradient(270deg, red, #000000); border-image-slice: 1; border-image-width: 5px; box-shadow: 0 0 15px 5px rgba(0, 0, 70, 0.1); }
+        75% { border-image-source: linear-gradient(360deg, red, #000000); border-image-slice: 1; border-image-width: 5px; box-shadow: 0 0 15px 5px rgba(70, 0, 0, 0.6); }
+        100% { border-image-source: linear-gradient(90deg, red, #000000); border-image-slice: 1; border-image-width: 5px; box-shadow: 0 0 15px 5px rgba(0, 0, 70, 0.6); }
       }
     `;
     document.head.appendChild(style);
@@ -80,12 +80,14 @@ export const Experience = () => {
 
   // Helper function to get box-shadow color based on the animation phase
   const getBoxShadowColor = (animationProgress) => {
-    if (animationProgress >= 0 && animationProgress < 0.25) return "rgba(70, 0, 0, 0.6)"; // Red
-    if (animationProgress >= 0.25 && animationProgress < 0.50) return "rgba(11, 36, 71, 0.6)"; // #0b2447
-    if (animationProgress >= 0.50 && animationProgress < 0.75) return "rgba(11, 36, 71, 0.6)"; // #0b2447
+    if (animationProgress >= 0 && animationProgress < 0.25)
+      return "rgba(70, 0, 0, 0.6)"; // Red
+    if (animationProgress >= 0.25 && animationProgress < 0.5)
+      return "rgba(11, 36, 71, 0.6)"; // #0b2447
+    if (animationProgress >= 0.5 && animationProgress < 0.75)
+      return "rgba(11, 36, 71, 0.6)"; // #0b2447
     return "rgba(70, 0, 0, 0.6)"; // Default to Red
   };
-  
 
   // State for hover effect
   const [hoveredIndex, setHoveredIndex] = React.useState(null);
@@ -99,7 +101,7 @@ export const Experience = () => {
             <div
               style={{
                 display: "flex",
-                flexDirection: 'column',
+                flexDirection: "column",
                 justifyContent: "center",
                 alignItems: "center",
                 position: "relative", // Ensure the animation stays within the div
@@ -109,7 +111,11 @@ export const Experience = () => {
               <li
                 style={{
                   ...skillStyle,
-                  boxShadow: `0 0 15px ${hoveredIndex === id ? "rgba(0, 0, 0, 0.8)" : getBoxShadowColor(id / skills.length)}`,
+                  boxShadow: `0 0 15px ${
+                    hoveredIndex === id
+                      ? "rgba(0, 0, 0, 0.8)"
+                      : getBoxShadowColor(id / skills.length)
+                  }`,
                 }}
                 onMouseEnter={() => setHoveredIndex(id)}
                 onMouseLeave={() => setHoveredIndex(null)}
@@ -133,7 +139,7 @@ export const Experience = () => {
                         width: "60px",
                         height: "auto",
                         borderRadius: "50%",
-                        marginTop: '1rem'
+                        marginTop: "1rem",
                       }}
                       src={getImageUrl(historyItem.imageSrc)}
                       alt={`${historyItem.organisation} Logo`}
