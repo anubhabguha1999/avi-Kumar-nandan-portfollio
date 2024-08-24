@@ -1,61 +1,11 @@
 [
-  
-  {
-    "title": "React",
-    "imageSrc": "skills/react.png"
-  }, 
-  {
-    "title": "Node.Js",
-    "imageSrc": "skills/node.png"
-  },
-  {
-    "title": "Jest.js",
-    "imageSrc": "skills/jest.png"
-  },
-  {
-    "title": "TypeScript",
-    "imageSrc": "skills/typeScript.png"
-  },
-  {
-    "title": "Tailwind",
-    "imageSrc": "skills/Tailwind.png"
-  },
-  {
-    "title": "GitHub",
-    "imageSrc": "skills/GitHub.png"
-  },
-  {
-    "title": "MAterial Ui",
-    "imageSrc": "skills/mui.png"
-  },
-  {
-    "title": "NPM",
-    "imageSrc": "skills/NPM.png"
-  },
-  {
-    "title": "Redux",
-    "imageSrc": "skills/Redux.png"
-  },
-  
-  {
-    "title": "MongoDB",
-    "imageSrc": "skills/mongodb.png"
-  },
-  {
-    "title": "Figma",
-    "imageSrc": "skills/figma.png"
-  },
-  {
-    "title": "HTML",
-    "imageSrc": "skills/html.png"
-  },
-  {
-    "title": "CSS",
-    "imageSrc": "skills/css.png"
-  },
-  {
-    "title": "JavaScript",
-    "imageSrc": "skills/JavaScript.png"
-  }
-  
+  { "title": "Sales Strategy", "iconClass": "fas fa-chart-line" },
+  { "title": "Team Leadership", "iconClass": "fas fa-users" },
+  { "title": "Client Management", "iconClass": "fas fa-handshake" },
+  { "title": "Market Analysis", "iconClass": "fas fa-chart-area" },
+  { "title": "Revenue Growth", "iconClass": "fas fa-dollar-sign" },
+  { "title": "Customer Service", "iconClass": "fas fa-headset" },
+  { "title": "Training and Mentorship", "iconClass": "fas fa-chalkboard-teacher" },
+  { "title": "Negotiation", "iconClass": "fas fa-comments" },
+  { "title": "Performance Monitoring", "iconClass": "fas fa-tachometer-alt" }
 ]

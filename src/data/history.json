@@ -1,10 +1,21 @@
 [
   {
-    "role": "Software Developer",
-    "organisation": "SoftSensor.ai",
-    "startDate": "July, 2023",
-    "endDate": "Present",
-    "experiences": ["React","Node.Js","Jest.js", "Tailwind CSS","Redux","Redux Saga", "Material UI", "TypeScript","JavaScript","HTML","CSS", "GitHub"],
-    "imageSrc": "history/SoftSensor.png"
+    "role": "Area Sales Manager",
+    "organisation": "Vivo",
+    "startDate": "2022", 
+    "endDate": "Present",  
+    "experiences": [
+      "Sales Strategy",
+      "Team Leadership",
+      "Client Management",
+      "Market Analysis",
+      "Revenue Growth",
+      "Customer Service",
+      "Training and Mentorship",
+      "Negotiation",
+      "Performance Monitoring"
+    ],
+    "imageSrc": "history/vivo.png"  
   }
 ]
+

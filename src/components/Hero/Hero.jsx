@@ -7,11 +7,11 @@ export const Hero = () => {
   return (
     <section className={styles.container}>
       <div className={styles.content}>
-        <h1 className={styles.title}>Hi, I'm Anubhab Guha</h1>
+        <h1 className={styles.title}>Hi, I'm Avi Kumar Nandan</h1>
         <p className={styles.description}>
-          I'm a full-stack developer with 1+ years of experience using Full Stack Development. Reach out if you'd like to learn more!
+        I have experience working as an Area Sales Manager at Vivo. Feel free to reach out if you'd like to learn more!
         </p>
-        <a href="mailto:anubhabguha1999@gmail.com" className={styles.contactBtn}>
+        <a href="mailto:navi6354@gmail.com" className={styles.contactBtn}>
           Contact Me
         </a>
       </div>

@@ -9,38 +9,51 @@ export const About = () => {
       <h2 className={styles.title}>About</h2>
       <div className={styles.content}>
         <img
-          src={getImageUrl("about/aboutImage.png")}
+          src={getImageUrl("history/vivo.png")}
           alt="Me sitting with a laptop"
           className={styles.aboutImage}
-        />
+          />
         <ul className={styles.aboutItems}>
           <li className={styles.aboutItem}>
             <img src={getImageUrl("about/cursorIcon.png")} alt="Cursor icon" />
             <div className={styles.aboutItemText}>
-              <h3>Frontend Developer</h3>
+              <h3>Area Sales Manager at Vivo</h3>
               <p>
-                I'm a have experience in building responsive
-                and optimized sites. With React, Tailwind CSS, Material UI, TypeScript, JavaScript, HTML and CSS.
+                I have extensive experience as an Area Sales Manager at Vivo, where I
+                was responsible for overseeing sales strategies, managing client relationships, and driving revenue growth across multiple regions.
               </p>
             </div>
           </li>
           <li className={styles.aboutItem}>
             <img src={getImageUrl("about/serverIcon.png")} alt="Server icon" />
             <div className={styles.aboutItemText}>
-              <h3>Backend Developer</h3>
+              <h3>Team Leadership</h3>
               <p>
-                I have experience developing fast and optimised back-end systems
-                and APIs
+                Successfully led a team of sales representatives, providing guidance and
+                training to improve performance and achieve sales targets. My role involved
+                coaching, mentoring, and performance monitoring to ensure team success.
               </p>
             </div>
           </li>
           <li className={styles.aboutItem}>
             <img src={getImageUrl("about/uiIcon.png")} alt="UI icon" />
             <div className={styles.aboutItemText}>
-              <h3>UI Designer</h3>
+              <h3>Market Strategy</h3>
               <p>
-                I have designed multiple landing pages and have created design
-                systems as well
+                Developed and executed market strategies to expand market presence
+                and enhance brand visibility. Focused on customer needs and trends to
+                effectively position products and drive growth.
+              </p>
+            </div>
+          </li>
+          <li className={styles.aboutItem}>
+            <img src={getImageUrl("about/cursorIcon.png")} alt="Achievement icon" />
+            <div className={styles.aboutItemText}>
+              <h3>Achievements</h3>
+              <p>
+                Consistently met and exceeded sales targets, contributing to the overall
+                success of the company. Recognized for outstanding sales performance
+                and innovative sales approaches.
               </p>
             </div>
           </li>
