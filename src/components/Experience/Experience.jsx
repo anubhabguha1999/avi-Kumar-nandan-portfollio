@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./Experience.module.css";
 import skills from "../../data/skills.json";
 import history from "../../data/history.json";
@@ -8,39 +8,40 @@ import "@fortawesome/fontawesome-free/css/all.min.css";
 export const Experience = () => {
   // Define keyframes for the snake-like circular animation
   const snakeAnimation = `
-    @keyframes snakeAnimation {
-      0% {
-        border-image-source: linear-gradient(90deg, red, blue, green);
-        border-image-slice: 1;
-        border-image-width: 5px;
-        box-shadow: 0 0 15px 5px rgba(255, 0, 0, 0.6);
-      }
-      25% {
-        border-image-source: linear-gradient(180deg, red, blue, green);
-        border-image-slice: 1;
-        border-image-width: 5px;
-        box-shadow: 0 0 15px 5px rgba(0, 0, 255, 0.6);
-      }
-      50% {
-        border-image-source: linear-gradient(270deg, red, blue, green);
-        border-image-slice: 1;
-        border-image-width: 5px;
-        box-shadow: 0 0 15px 5px rgba(0, 255, 0, 0.6);
-      }
-      75% {
-        border-image-source: linear-gradient(360deg, red, blue, green);
-        border-image-slice: 1;
-        border-image-width: 5px;
-        box-shadow: 0 0 15px 5px rgba(255, 0, 0, 0.6);
-      }
-      100% {
-        border-image-source: linear-gradient(90deg, red, blue, green);
-        border-image-slice: 1;
-        border-image-width: 5px;
-        box-shadow: 0 0 15px 5px rgba(0, 0, 255, 0.6);
-      }
+  @keyframes snakeAnimation {
+    0% {
+      border-image-source: linear-gradient(90deg, red, blue);
+      border-image-slice: 1;
+      border-image-width: 5px;
+      box-shadow: 0 0 15px 5px rgba(70, 0, 0, 0.6);
     }
-  `;
+    25% {
+      border-image-source: linear-gradient(180deg, red, blue);
+      border-image-slice: 1;
+      border-image-width: 5px;
+      box-shadow: 0 0 15px 5px rgba(0, 0, 70, 0.6);
+    }
+    50% {
+      border-image-source: linear-gradient(270deg, red, blue);
+      border-image-slice: 1;
+      border-image-width: 5px;
+      box-shadow: 0 0 15px 5px rgba(0, 0, 70, 0.6);
+    }
+    75% {
+      border-image-source: linear-gradient(360deg, red, blue);
+      border-image-slice: 1;
+      border-image-width: 5px;
+      box-shadow: 0 0 15px 5px rgba(70, 0, 0, 0.6);
+    }
+    100% {
+      border-image-source: linear-gradient(90deg, red, blue);
+      border-image-slice: 1;
+      border-image-width: 5px;
+      box-shadow: 0 0 15px 5px rgba(0, 0, 70, 0.6);
+    }
+  }
+`;
+
 
   // Append the keyframes to the document head
   React.useEffect(() => {
@@ -65,7 +66,6 @@ export const Experience = () => {
   };
 
   const skillStyle = {
-    backgroundColor: "#19376d",
     border: "5px solid transparent", // Create space for the border effect
     margin: "0.5rem",
     padding: "1rem",
@@ -83,8 +83,8 @@ export const Experience = () => {
     borderImageSource: "linear-gradient(90deg, red, blue, green)",
     borderImageSlice: 1,
     borderImageWidth: "5px",
-    animation: "snakeAnimation 6s infinite linear",
-    boxShadow: "0 0 15px rgba(255, 0, 0, 0.6)", // Default to red glow
+    animation: "snakeAnimation 7s infinite linear",
+    boxShadow: "0 0 15px rgba(70, 0, 0, 0.6)", // Default to red glow
   };
 
   const skillIconContainerStyle = {
@@ -110,11 +110,14 @@ export const Experience = () => {
 
   // Helper function to get box-shadow color based on the animation phase
   const getBoxShadowColor = (animationProgress) => {
-    if (animationProgress >= 0 && animationProgress < 0.25) return "rgba(255, 0, 0, 0.6)"; // Red
-    if (animationProgress >= 0.25 && animationProgress < 0.50) return "rgba(0, 0, 255, 0.6)"; // Blue
-    if (animationProgress >= 0.50 && animationProgress < 0.75) return "rgba(0, 255, 0, 0.6)"; // Green
-    return "rgba(255, 0, 0, 0.6)"; // Default to Red
+    if (animationProgress >= 0 && animationProgress < 0.25) return "rgba(70, 0, 0, 0.6)"; // Red
+    if (animationProgress >= 0.25 && animationProgress < 0.50) return "rgba(0, 0, 70, 0.6)"; // Blue
+    if (animationProgress >= 0.50 && animationProgress < 0.75) return "rgba(0, 0, 70, 0.6)"; // Blue
+    return "rgba(70, 0, 0, 0.6)"; // Default to Red
   };
+
+  // State for hover effect
+  const [hoveredIndex, setHoveredIndex] = React.useState(null);
 
   return (
     <section className={styles.container} id="experience">
@@ -135,8 +138,10 @@ export const Experience = () => {
               <li
                 style={{
                   ...skillStyle,
-                  boxShadow: `0 0 15px ${getBoxShadowColor(id / skills.length)}`,
+                  boxShadow: `0 0 15px ${hoveredIndex === id ? "rgba(0, 0, 0, 0.8)" : getBoxShadowColor(id / skills.length)}`,
                 }}
+                onMouseEnter={() => setHoveredIndex(id)}
+                onMouseLeave={() => setHoveredIndex(null)}
               >
                 <div style={skillIconContainerStyle}>
                   <i className={skill.iconClass} style={skillIconStyle}></i>
