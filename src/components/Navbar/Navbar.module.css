@@ -52,6 +52,7 @@
   .navbar {
     flex-direction: column;
     align-items: flex-start;
+    padding-top: 10px;
   }
 
   .menu {
