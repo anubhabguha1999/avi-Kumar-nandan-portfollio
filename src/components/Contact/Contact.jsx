@@ -13,7 +13,7 @@ export const Contact = () => {
       <ul className={styles.links}>
         <li className={styles.link}>
           <img src={getImageUrl("contact/emailIcon.png")} alt="Email icon" />
-          <a href="mailto:navi6354@gmail.com">navi6354@gmail.com</a>
+          <a href="mailto:navi6354@gmail.com">Email</a>
         </li>
         <li className={styles.link}>
           <img
@@ -21,11 +21,11 @@ export const Contact = () => {
             src={getImageUrl("contact/facebook.png")}
             alt="LinkedIn icon"
           />
-          <a href="https://www.facebook.com/bloker.avijit">facebook/aviKumarNandan</a>
+          <a href="https://www.facebook.com/bloker.avijit">Facebook</a>
         </li>
         <li className={styles.link}>
           <img  style={{height:'2.5rem', width: '2.5rem'}} src={getImageUrl("contact/insta.png")} alt="Github icon" />
-          <a href="https://www.instagram.com/abhi_kumar_nandan007/">instagram/aviKumarNandan</a>
+          <a href="https://www.instagram.com/abhi_kumar_nandan007/">Instagram</a>
         </li>
       </ul>
     </footer>
